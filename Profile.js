@@ -34,7 +34,7 @@ export default class Profile extends React.Component {
                 //scrollEnabled={false}
             >
                 <Text style={styles.welcome}>
-                    Please enter in your 6 most recent scores:
+                    Please enter in your 6 most recent scores: today
                 </Text>
 
                 <TextField
