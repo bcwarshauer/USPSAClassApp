@@ -11,7 +11,6 @@ const instructions = Platform.select({
     android: 'Double tap R on your keyboard to reload,\n' +
     'Shake or press menu button for dev menu',
 });
-
 type Props = {};
 export default class Profile extends React.Component {
     state = {score1: '',};
@@ -20,9 +19,19 @@ export default class Profile extends React.Component {
     static navigationOptions = {
         title: 'Calculate Scores',
     };
+    getScore(){
+      var fScore = parseInt(score1)+parseInt(score2)+parseInt(score3)+
+      parseInt(score4)+parseInt(score5)+parseInt(score6)/6;
+    }
+
+
+
+
     render() {
         let { score1 } = this.state;
         let { score2,score3,score4,score5,score6 } = this.state;
+        let _average = parseInt(score1)+parseInt(score2)+parseInt(score3)+
+        parseInt(score4)+parseInt(score5)+parseInt(score6)/6;
 
         return (
             //style={styles.container}
@@ -69,7 +78,7 @@ export default class Profile extends React.Component {
                 />
 
                 <Button
-                    onPress={() => Alert.alert('Calculating your Classification!!!!')}
+                    onPress={() => Alert.alert(getScore())}
                     title="Calculate"
                 />
 
@@ -78,6 +87,7 @@ export default class Profile extends React.Component {
         );
     }
 }
+
 
 const styles = StyleSheet.create({
     container: {
